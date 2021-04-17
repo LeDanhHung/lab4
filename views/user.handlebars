@@ -1,4 +1,4 @@
-<body>
+ <body>
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top navbar-custom">
         <div class="container"><a class="navbar-brand" href="/"><img style="height:40px"
                     src="https://www.shareicon.net/data/128x128/2017/05/30/886539_media_512x512.png"
@@ -20,12 +20,9 @@
                 <li class="nav-item" role="presentation">
                     <a data-toggle="tab" class="nav-link" href="#pills-list">Danh sách</a>
                 </li>
+               
                 <li class="nav-item" role="presentation">
-                    <a data-toggle="tab" class="nav-link" href="#pills-find">Tìm kiếm</a>
-
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a data-toggle="tab" class="nav-link" href="#pills-add-list">Thêm</a>
+                    <a data-toggle="tab" class="nav-link" href="dangki">Thêm</a>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -34,30 +31,16 @@
                         <div class="row">
                             <p style="color:#0f0f0f" class="col">Danh sách User</p>
                         </div>
-                        <div class="row">
-                            <div class="col bg-light ">
-                                <table class="table table-light bg-dark ">
-                                    <thead class="container-fluid">
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Họ tên</th>
-                                            <th scope="col">Ngày Sinh</th>
-                                            <th scope="col">SDT(email)</th>
-                                            <th scope="col">Giới tính</th>
-                                            <th scope="col">Sở thích</th>
-                                            <th scope="col">Giới thiệu ngắn</th>
-                                            <th scope="col">Avatar</th>
-                                            <th scope="col"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="listUser container-fluid">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
+                {{#each users }}
+                
+                <li>{{this.username}}</li>
+                <li>{{this.name}}</li>
+                <li>{{this.password}}</li>
+                <li>____________________________________________________________________________</li>
+                {{/each}}
 
                 <div class="tab-pane fade" id="pills-find" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div class="container-fluid">
@@ -93,47 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-add-list" role="tabpanel" aria-labelledby="pills-contact-tab">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Họ tên</label>
-                            <input type="text" id="ipName" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Ngày sinh</label>
-                            <input type="text" id="ipNgaySinh" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" id="ipEmail" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Nam
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Nữ
-                                </label>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Sở thích</label>
-                            <textarea class="form-control" id="textareaSoThich" rows="3"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Giới thiệu</label>
-                            <textarea class="form-control" id="textareaGioiThieu" rows="3"></textarea>
-                        </div>
-                        <button id="add-user" type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+                
             </div>
     </header>
 
@@ -174,157 +117,8 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script>
+  
+</body> 
 
-        let images = 'data:image/png;base64,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';
-
-
-        var listUser = $('.listUser');
-        var userSearch = $('.userSearch');
-        var inputSearch = $('#inputSearch');
-        var buttonSearch = $('#btnSearch');
-        // tìm  kiếm
-        buttonSearch.click(function (ev) {
-            ev.preventDefault();
-            var users = arr.filter(user => user.name === inputSearch.val().trim());
-            if (users.length !== 0) {
-                var p = '';
-                $('.rowSearch').css({ 'display': 'block' })
-                users.forEach((element, index) => {
-                    p += `<tr>
-                    <td>${index + 1}</td>
-                            <td scope="row">${element.name}</td>
-                            <td>${element.ngaySinh}</td>
-                            <td >${element.email}</td>
-                            <td >${element.gioiTinh}</td>
-                            <td >${element.soThich}</td>
-                            <td >${element.gioiThieu}</td>
-                            <td><img class="img-avatar" src="${element.images}" /></td>
-                        </tr> `
-                })
-                userSearch.html(p)
-            } else {
-                $('.rowSearch').css({ 'display': 'none' })
-                alert('Không tìm thấy họ tên')
-            }
-        })
-
-
-        var object = {
-            name: 'ledanhhung',
-            ngaySinh: '26/09/2001',
-            email: 'hungldph11449@fpt.edu.vn',
-            gioiTinh: 'nam',
-            soThich: 'abc',
-            gioiThieu: 'không có',
-            images
-        }
-        var object1 = {
-            name: 'ledanhhung',
-            ngaySinh: '26/09/2001',
-            email: 'hungldph11449@fpt.edu.vn',
-            gioiTinh: 'nam',
-            soThich: 'abc',
-            gioiThieu: 'không có',
-            images
-        }
-        var object2 = {
-            name: 'ledanhhung',
-            ngaySinh: '26/09/2001',
-            email: 'hungldph11449@fpt.edu.vn',
-            gioiTinh: 'nam',
-            soThich: 'abc',
-            gioiThieu: 'không có',
-            images
-        }
-
-        var arr = [object, object1, object2, object];
-
-        const updateArr = function () {
-            arr.forEach(function (element, index) {
-                listUser.append(`<tr class="tr">
-                            <th  scope="row">${index}</th>
-                            <td ><input class="input" name="name" type="text" value="${element.name}" disabled></td>
-                            <td ><input class="input" name="ngaySinh" type="text" value="${element.ngaySinh}" disabled></td>
-                            <td ><input class="input" name="email" type="text" value="${element.email}" disabled></td>
-                            <td  ><input class="input" name="gioitinh" type="text" value="${element.gioiTinh}" disabled></td>
-                            <td  ><input class="input" name="sothich" type="text" value="${element.soThich}" disabled></td>
-                            <td  ><input class="input" name="gioithieu" type="text" value="${element.gioiThieu}" disabled></td>
-                            <td  ><img class="img-avatar" src="${element.images}" /></td>
-                            <td  ><button class="btn-remove">Delete</button><button class="btn-edit">Edit</button></td>
-                        </tr> `)
-            })
-        }
-        // danh sách
-        $(document).ready(function () {
-            updateArr()
-            // xóa 
-            const btnXoa = document.querySelectorAll('.btn-remove')
-            const btnSua = document.querySelectorAll('.btn-edit')
-            const tr = document.querySelectorAll('.tr');
-            btnXoa.forEach((element, key) => {
-                element.addEventListener('click', function (ev) {
-                    tr[key].style.display = "none";
-                    arr.splice(key, 1);
-                    console.log(arr)
-                })
-            });
-
-            for (let index = 0; index < btnSua.length; index++) {
-                btnSua[index].addEventListener("click", function () {
-                    if (btnSua[index].innerHTML === 'Edit') {
-                        btnSua[index].innerHTML = "Save"
-                        $('input[name="name"]')[index].disabled = false;
-                        $('input[name="ngaySinh"]')[index].disabled = false;
-                        $('input[name="email"]')[index].disabled = false;
-                        $('input[name="gioitinh"]')[index].disabled = false;
-                        $('input[name="sothich"]')[index].disabled = false;
-                        $('input[name="gioithieu"]')[index].disabled = false;
-                    } else {
-                        btnSua[index].innerHTML = 'Edit'
-                        $('input[name="name"]')[index].disabled = true;
-                        $('input[name="ngaySinh"]')[index].disabled = true;
-                        $('input[name="email"]')[index].disabled = true;
-                        $('input[name="gioitinh"]')[index].disabled = true;
-                        $('input[name="sothich"]')[index].disabled = true;
-                        $('input[name="gioithieu"]')[index].disabled = true;
-                    }
-                })
-
-            }
-
-        })
-
-        // khi nhấn vào thêm
-        const buttonThem = $('#add-user');
-        buttonThem.click(function (ev) {
-            ev.preventDefault();
-            const name = $('#ipName').val();
-            const ngaySinh = $('#ipNgaySinh').val();
-            const email = $('#ipEmail').val();
-            const soThich = $('#textareaSoThich').val();
-            const gioiThieu = $('#textareaGioiThieu').val();
-            var a = document.getElementsByName('flexRadioDefault');
-            let gioiTinh = '';
-            if (a[0].checked) {
-                gioiTinh = 'nam';
-            } else if (a[1].checked) {
-                gioiTinh = 'nữ';
-            }
-            var object = { name, ngaySinh, email, gioiTinh, soThich, gioiThieu, images };
-            arr.push(object);
-            listUser.append(`<tr>
-                            <th scope="row">4</th>
-                            <td ><input class="input" name="name" type="text" value="${object.name}" disabled></td>
-                            <td ><input class="input" name="ngaySinh" type="text" value="${object.ngaySinh}" disabled></td>
-                            <td ><input class="input" name="email" type="text" value="${object.email}" disabled></td>
-                            <td  ><input class="input" name="gioitinh" type="text" value="${object.gioiTinh}" disabled></td>
-                            <td  ><input class="input" name="sothich" type="text" value="${object.soThich}" disabled></td>
-                            <td  ><input class="input" name="gioithieu" type="text" value="${object.gioiThieu}" disabled></td>
-                            <td  ><img class="img-avatar" src="${object.images}" /></td>
-                            <td  ><button class="btn-remove">Delete</button><button class="btn-edit">Edit</button></td>
-                       </tr> `)
-            alert('Thêm thành công')
-        })
-    </script>
-</body>
+       
+    
